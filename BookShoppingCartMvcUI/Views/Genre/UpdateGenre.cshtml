@@ -1,0 +1,21 @@
+﻿@model GenreDTO
+@{
+    Layout = "_AdminLayout";
+
+}
+<div style="width:50px">
+    <h3>Update Genre</h3>
+    <a asp-action="Index" asp-controller="Genre" class="btn btn-primary">Back</a>
+    <form asp-action="UpdateGenre">
+        <input type="hidden" asp-for="Id" />
+        <div class="my-2">
+            <label>Genre</label>
+            <input type="text" asp-for="GenreName" class="form-control"/>
+            <span asp-validation-for="GenreName" class="bg-danger" ></span>
+        </div>
+        <div class="my-2">
+            <button type="submit" class="btn btn-info" >Update</button>
+        </div>
+    </form>
+</div>
+

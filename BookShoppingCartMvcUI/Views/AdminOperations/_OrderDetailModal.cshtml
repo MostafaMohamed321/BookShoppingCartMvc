@@ -1,0 +1,38 @@
+﻿@model OrderDetailModelDTO
+<div class="modal fade" id="modal-@Model.DivId" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Order Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Book</th>
+                        <th>Genre</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total price</th>
+                    </tr>
+                    @foreach(var item in Model.OrderDetail)
+                    {
+                        <tr>
+                            <td>@item.Book.BookName</td>
+                            <td>@item.Book.Genre.GenreName</td>
+                            <td>@item.Book.Price</td>
+                            <td>@item.Quantity</td>
+                            <td>@(item.Quantity * item.UnitPrice)</td>
+
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+</div>
